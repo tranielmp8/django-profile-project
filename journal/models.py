@@ -1,0 +1,15 @@
+from django.db import models
+from django.contrib.auth.models import User 
+
+# Create your models here.
+class Thought(models.Model):
+  title = models.CharField(max_length=150)
+  content = models.CharField(max_length=400)
+  date_posted = models.DateTimeField(auto_now_add=True)
+  
+  user = models.ForeignKey(User, max_length=10, on_delete=models.CASCADE, null=True)
+  
+class Profile(models.Model):
+  # null=True allows nulls in database, while blank=True allows form to have a blank
+  profile_pic = models.ImageField(null=True, blank=True, default='Default.png', upload_to='media/')
+  user = models.ForeignKey(User, max_length=10, on_delete=models.CASCADE, null=True)

@@ -1,0 +1,21 @@
+
+body {
+  color: #333;
+}
+
+.btn {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.form-layout {
+  border-radius: 20px;
+  width: 550px;
+}
+
+.form-text {
+  color: #888;
+}
+
+.form-control {
+  border: #555 solid 3px;
+}

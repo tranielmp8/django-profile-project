@@ -1,0 +1,37 @@
+
+
+{% extends "journal/navbar.html" %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/superhero/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="">
+  <title>Project Profile | </title>
+</head>
+<body>
+  {% block content %}
+
+    <div class="container bg-white shadow-md mt-4 mb-4 p-5 form-layout" >
+      <h1 class="text-light" >Delete Account?</h1>
+      <p>Are you sure you wanted to delete your account?</p>
+
+      <form class="mb-4" action="" method="POST" autocomplete="off">
+        {% csrf_token %}
+  
+          <button class="btn btn-danger btn-md w-100 btn-block p-3 mb-4" type="submit">Delete Account</button>
+      </form>
+
+    <a class=""  href="{% url 'profile-management' %}">Return to profile management</a>
+
+   
+    </div>
+
+  {% endblock %}
+</body>
+</html>
+
