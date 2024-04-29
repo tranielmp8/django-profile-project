@@ -29,13 +29,13 @@ def register(request):
       current_user = form.save(commit=False)
       form.save()
       
-      # 4 parameters, subject, message, from email, to email
-      # send_mail(
-      #   "Welcome to the Profile App", 
-      #   "Congratulations on creating your account",
-      #   settings.DEFAULT_FROM_EMAIL,
-      #   [current_user.email]
-      #   )
+      # - 4 parameters, subject, message, from email, to email
+      send_mail(
+        "Welcome to the Profile App", 
+        "Congratulations on creating your account",
+        settings.DEFAULT_FROM_EMAIL,
+        [current_user.email]
+        )
       
       profile = Profile.objects.create(user=current_user)
       messages.success(request, "User created!")
